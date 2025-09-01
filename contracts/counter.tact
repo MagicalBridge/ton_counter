@@ -48,7 +48,7 @@ contract Counter {
         
         // 确保不会变成负数
         if (self.counter >= msg.amount) {
-            self.counter = self.counter - msg.amount;
+            self.counter -= msg.amount;
         } else {
             self.counter = 0;
         }
