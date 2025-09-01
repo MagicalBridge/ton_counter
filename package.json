@@ -6,7 +6,6 @@
   "scripts": {
     "build": "blueprint build",
     "test": "jest",
-    "test:blueprint": "blueprint test",
     "deploy": "blueprint run",
     "interact": "blueprint run interact"
   },
@@ -26,7 +25,7 @@
     "@ton/sandbox": "^0.37.0",
     "@ton/test-utils": "^0.11.0",
     "@ton/ton": "^15.3.1",
-    "@types/jest": "^29.5.14",
+    "@types/jest": "30.0.0",
     "@types/node": "^24.3.0",
     "jest": "^30.1.1",
     "ts-jest": "^29.1.1",
