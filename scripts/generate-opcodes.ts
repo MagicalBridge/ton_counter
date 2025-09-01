@@ -2,35 +2,28 @@ import { beginCell, toNano } from '@ton/core';
 
 // 演示如何计算消息的opcode
 function calculateMessageOpcode(messageName: string): string {
-    // 使用简单的哈希算法计算opcode
-    let hash = 0;
-    for (let i = 0; i < messageName.length; i++) {
-        const char = messageName.charCodeAt(i);
-        hash = ((hash << 5) - hash) + char;
-        hash = hash & hash; // 转换为32位整数
-    }
-    
-    // 转换为16进制
-    return '0x' + Math.abs(hash).toString(16).padStart(8, '0');
+  // 使用简单的哈希算法计算opcode
+  let hash = 0;
+  for (let i = 0; i < messageName.length; i++) {
+    const char = messageName.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+    hash = hash & hash; // 转换为32位整数
+  }
+
+  // 转换为16进制
+  return '0x' + Math.abs(hash).toString(16).padStart(8, '0');
 }
 
 // 示例消息
-const messages = [
-    'Increment',
-    'Decrement', 
-    'Reset',
-    'Transfer',
-    'Mint',
-    'Burn'
-];
+const messages = ['Increment', 'Decrement', 'Reset', 'Transfer', 'Mint', 'Burn'];
 
 console.log('🔧 消息Opcode生成器\n');
 
 messages.forEach(msg => {
-    const opcode = calculateMessageOpcode(msg);
-    console.log(`message(${opcode}) ${msg} {`);
-    console.log(`    // 在这里添加字段`);
-    console.log(`}\n`);
+  const opcode = calculateMessageOpcode(msg);
+  console.log(`message(${opcode}) ${msg} {`);
+  console.log(`    // 在这里添加字段`);
+  console.log(`}\n`);
 });
 
 console.log('💡 提示:');

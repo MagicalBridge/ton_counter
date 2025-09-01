@@ -111,3 +111,45 @@ npm run interact
 - 查看当前计数器值
 - 发送增加/减少消息
 - 重置计数器（如果你是owner）
+
+
+➜  ton_counter git:(main) ✗ pnpm run deploy
+> ton-counter@1.0.0 deploy /Users/louis/Documents/ton_workspace/ton_counter
+> blueprint run
+
+? Choose file to use (Use arrow keys)
+? Choose file to use deploy
+? Which network do you want to use? 
+? Which network do you want to use? testnet
+? Which wallet are you using? 
+? Which wallet are you using? Mnemonic
+Connected to wallet at address: 0QAy9So3qSJNMcmAbF_StNnZxGXX19dNjQDreB1TotMUOdtC
+🚀 开始部署Counter合约到TON测试网络...
+
+👤 部署者地址: EQAy9So3qSJNMcmAbF_StNnZxGXX19dNjQDreB1TotMUOT0N
+📄 创建合约实例...
+📍 预计合约地址: EQB-Y2B1PbXaje5DZ8lYi2jMzyssY61I3iBRBhdcKc7lhzjM
+⏳ 正在部署Counter合约...
+💸 部署费用: 0.05 TON
+Sent transaction
+📤 部署交易已发送
+⏳ 等待交易确认...
+Contract deployed at address kQB-Y2B1PbXaje5DZ8lYi2jMzyssY61I3iBRBhdcKc7lh4NG
+You can view it at https://testnet.tonscan.org/address/kQB-Y2B1PbXaje5DZ8lYi2jMzyssY61I3iBRBhdcKc7lh4NG
+
+✅ Counter合约部署成功!
+🎯 合约地址: EQB-Y2B1PbXaje5DZ8lYi2jMzyssY61I3iBRBhdcKc7lhzjM
+👑 Owner地址: EQAy9So3qSJNMcmAbF_StNnZxGXX19dNjQDreB1TotMUOT0N
+🔍 浏览器查看: https://testnet.tonscan.org/address/EQB-Y2B1PbXaje5DZ8lYi2jMzyssY61I3iBRBhdcKc7lhzjM
+
+📊 验证部署状态:
+  ✓ 当前计数器值: 0
+  ✓ 合约Owner: EQAy9So3qSJNMcmAbF_StNnZxGXX19dNjQDreB1TotMUOT0N
+  ✓ 合约余额: 0.0490 TON
+
+🎉 合约部署并验证成功!
+
+📝 接下来你可以:
+  1. 运行 npm run interact 与合约交互
+  2. 在浏览器中查看合约状态
+  3. 使用其他钱包向合约发送消息

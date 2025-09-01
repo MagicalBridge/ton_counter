@@ -8,12 +8,6 @@
 3. 发送你的钱包地址 (从Tonkeeper等钱包复制)
 4. 等待接收测试币
 
-### 方法B: 使用网页水龙头
-1. 访问 https://testnet.tonscan.org/faucet
-2. 输入钱包地址
-3. 完成验证
-4. 获取测试币
-
 ## 步骤2: 配置环境 (1分钟)
 
 在项目根目录创建 `.env` 文件:
@@ -21,26 +15,27 @@
 ```bash
 # 创建环境变量文件
 cat > .env << 'EOF'
-TON_NETWORK=testnet
-DEPLOYER_MNEMONIC="你的助记词放在这里"
+WALLET_MNEMONIC="你的助记词放在这里"
+WALLET_VERSION="v4R2"
 EOF
 ```
 
 **重要**: 
 - 替换 `"你的助记词放在这里"` 为你的实际助记词
 - 助记词用双引号包围，单词间用空格分隔
+- WALLET_VERSION 通常使用 "v4R2"，这是最新的钱包版本
 
 ## 步骤3: 部署合约 (2分钟)
 
 ```bash
 # 1. 安装依赖 (如果还没有)
-npm install
+pnpm install
 
 # 2. 编译合约
-npm run build
+pnpm run build
 
 # 3. 部署到测试网
-npm run deploy
+pnpm run deploy
 ```
 
 ## 成功部署后你会看到:

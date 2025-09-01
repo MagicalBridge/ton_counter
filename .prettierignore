@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Build outputs
+build/
+dist/
+*.tsbuildinfo
+
+# Generated files
+*.generated.*
+*.compiled.*
+
+# Documentation that shouldn't be formatted
+*.md
+
+# Environment files
+.env*
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Test coverage
+coverage/
+
+# Blockchain specific
+*.boc
+*.fif
+*.fc
+*.pkg
+*.abi
+*.tact
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+temp/
+tmp/
