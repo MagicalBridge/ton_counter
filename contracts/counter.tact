@@ -29,30 +29,30 @@ contract Counter {
         // 输入验证 - 防止过大的数值导致溢出
         require(msg.amount > 0, "Amount must be positive");
         require(msg.amount <= 1000000, "Amount too large");
-        
+
         // 检查溢出
         let newValue: Int = self.counter + msg.amount;
         require(newValue >= self.counter, "Counter overflow");
-        
+
         self.counter = newValue;
-        
+
         // 使用notify而不是reply来节省gas
         self.notify("Counter incremented".asComment());
     }
 
-    // 接收Decrement消息  
+    // 接收Decrement消息
     receive(msg: Decrement) {
         // 输入验证
         require(msg.amount > 0, "Amount must be positive");
         require(msg.amount <= 1000000, "Amount too large");
-        
+
         // 确保不会变成负数
         if (self.counter >= msg.amount) {
             self.counter -= msg.amount;
         } else {
             self.counter = 0;
         }
-        
+
         // 使用notify而不是reply来节省gas
         self.notify("Counter decremented".asComment());
     }
@@ -61,7 +61,7 @@ contract Counter {
     receive(msg: Reset) {
         // 验证发送者是owner
         require(sender() == self.owner, "Only owner can reset");
-        
+
         self.counter = 0;
         // 使用notify而不是reply来节省gas
         self.notify("Counter reset".asComment());
